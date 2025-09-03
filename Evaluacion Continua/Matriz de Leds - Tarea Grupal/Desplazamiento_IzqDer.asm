@@ -21,9 +21,9 @@ inicio:
        sts TCCR1C, r16
        ldi r16, 0
        sts TIMSK1, r16
-       ldi r16, high(3036)
+       ldi r16, high(34286)
        sts TCNT1H, r16
-       ldi r16, low(3036)
+       ldi r16, low(34286)
        sts TCNT1L, r16
 
        sei
@@ -66,8 +66,9 @@ retardo:
         sbis TIFR1, TOV1
         rjmp retardo
         sbi TIFR1, TOV1
-        ldi r16,  high(3036)
+        ldi r16,  high(34286)
         sts TCNT1H, r16
-        ldi r16, low(3036)
+        ldi r16, low(34286)
         sts TCNT1L, r16
         ret
+

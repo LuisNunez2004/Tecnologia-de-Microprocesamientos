@@ -10,71 +10,71 @@ inicio:
 
        ldi r16, 0b00111111
        out DDRB, r16
-	   ldi r17, 0b00000011
+	   ldi r17, 0b00001111
 	   out DDRC, r17
-	   ldi r18, 0xFF
+	   ldi r18, 0b11110011
        out DDRD, r18
 
 rombo:
 		ldi r16, 0b01111110
-			ldi r17, 0b00000011
-            ldi r18, 0b00011000
+			ldi r17, 0b00001011
+            ldi r18, 0b00010000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
             rcall retardo2ms
 
 			ldi r16, 0b01111101
-			ldi r17, 0b00000011
-            ldi r18, 0b00111100
+			ldi r17, 0b00001111
+            ldi r18, 0b00110000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b01111011
-			ldi r17, 0b00000011
-            ldi r18, 0b01111110
+			ldi r17, 0b00001111
+            ldi r18, 0b01110010
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b01110111
-			ldi r17, 0b00000011
-            ldi r18, 0b11111111
+			ldi r17, 0b00001111
+            ldi r18, 0b11110011
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b01101111
-			ldi r17, 0b00000011
-            ldi r18, 0b11111111
+			ldi r17, 0b00001111
+            ldi r18, 0b11110011
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b01011111
-			ldi r17, 0b00000011
-            ldi r18, 0b01111110
+			ldi r17, 0b00001111
+            ldi r18, 0b01110010
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b00111111
-			ldi r17, 0b00000010
-            ldi r18, 0b00111100
+			ldi r17, 0b00001110
+            ldi r18, 0b00110000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b00111111
-			ldi r17, 0b00000001
-            ldi r18, 0b00011000
+			ldi r17, 0b00001001
+            ldi r18, 0b00010000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
@@ -90,4 +90,5 @@ retardo2ms:
 		   dec r19
 		   brne L1
 		   ret
+
 		  		

@@ -10,7 +10,7 @@ inicio:
 
        ldi r16, 0b00111111
        out DDRB, r16
-	   ldi r17, 0b00000011
+	   ldi r17, 0b00001111
 	   out DDRC, r17
 	   ldi r18, 0b11110011
        out DDRD, r18
@@ -92,3 +92,4 @@ retardo2ms:
 		   ret
 
 		  		
+

@@ -12,37 +12,37 @@ inicio:
        out DDRB, r16
 	   ldi r17, 0b00000011
 	   out DDRC, r17
-	   ldi r18, 0xFF
+	   ldi r18, 0b11110011
        out DDRD, r18
 
 cara_triste:
 			ldi r16, 0b01111110
-			ldi r17, 0b00000011
-            ldi r18, 0b00100100
+			ldi r17, 0b00000111
+            ldi r18, 0b00100000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
             rcall retardo2ms
 
 			ldi r16, 0b01111101
-			ldi r17, 0b00000011
-            ldi r18, 0b00100100
+			ldi r17, 0b00000111
+            ldi r18, 0b00100000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b01111011
-			ldi r17, 0b00000011
-            ldi r18, 0b00100100
+			ldi r17, 0b00000111
+            ldi r18, 0b00100000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
 			rcall retardo2ms
 
 			ldi r16, 0b01110111
-			ldi r17, 0b00000011
-            ldi r18, 0b00100100
+			ldi r17, 0b00000111
+            ldi r18, 0b00100000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
@@ -57,8 +57,8 @@ cara_triste:
 			rcall retardo2ms
 
 			ldi r16, 0b01011111
-			ldi r17, 0b00000011
-            ldi r18, 0b00111100
+			ldi r17, 0b00001111
+            ldi r18, 0b00110000
 			out PORTB, r16
 			out PORTC, r17
 			out PORTD, r18
@@ -90,4 +90,5 @@ retardo2ms:
 		   dec r19
 		   brne L1
 		   ret
+
 		  		

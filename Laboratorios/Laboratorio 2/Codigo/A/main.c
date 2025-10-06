@@ -6,7 +6,9 @@ void iniciar(void);
 void regresar(void);
 void cruz(void);
 void triangulo(void);
-void circulo(void);
+void circulo(uint8_t tamaÃ±o);
+void flor(void);
+void rana(void);
 
 void cruz(void){
 	PORTD = 0b01000000;
@@ -46,40 +48,40 @@ void triangulo(void){
 	PORTD = 0;
 }
 
-void circulo(uint8_t tamaño){
+void circulo(uint8_t tamaÃ±o){
 	PORTD = 0b00000100;   
 	_delay_ms(100);
 
 	// Primer cuadrante
-	for (uint8_t i = 0; i < tamaño; i++) { PORTD = 0b10000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o; i++) { PORTD = 0b10000000; _delay_ms(20); }
 	PORTD = 0b00010000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/2; i++) { PORTD = 0b10000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/2; i++) { PORTD = 0b10000000; _delay_ms(20); }
 	PORTD = 0b00010000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/3; i++) { PORTD = 0b10000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/3; i++) { PORTD = 0b10000000; _delay_ms(20); }
 	PORTD = 0b00010000; _delay_ms(20);
 
 	// Segundo cuadrante
-	for (uint8_t i = 0; i < tamaño; i++) { PORTD = 0b01000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o; i++) { PORTD = 0b01000000; _delay_ms(20); }
 	PORTD = 0b00010000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/2; i++) { PORTD = 0b01000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/2; i++) { PORTD = 0b01000000; _delay_ms(20); }
 	PORTD = 0b00010000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/3; i++) { PORTD = 0b01000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/3; i++) { PORTD = 0b01000000; _delay_ms(20); }
 	PORTD = 0b00010000; _delay_ms(20);
 
 	// Tercer cuadrante
-	for (uint8_t i = 0; i < tamaño; i++) { PORTD = 0b01000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o; i++) { PORTD = 0b01000000; _delay_ms(20); }
 	PORTD = 0b00100000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/2; i++) { PORTD = 0b01000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/2; i++) { PORTD = 0b01000000; _delay_ms(20); }
 	PORTD = 0b00100000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/3; i++) { PORTD = 0b01000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/3; i++) { PORTD = 0b01000000; _delay_ms(20); }
 	PORTD = 0b00100000; _delay_ms(20);
 
 	// Cuarto cuadrante
-	for (uint8_t i = 0; i < tamaño; i++) { PORTD = 0b10000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o; i++) { PORTD = 0b10000000; _delay_ms(20); }
 	PORTD = 0b00100000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/2; i++) { PORTD = 0b10000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/2; i++) { PORTD = 0b10000000; _delay_ms(20); }
 	PORTD = 0b00100000; _delay_ms(20);
-	for (uint8_t i = 0; i < tamaño/3; i++) { PORTD = 0b10000000; _delay_ms(20); }
+	for (uint8_t i = 0; i < tamaÃ±o/3; i++) { PORTD = 0b10000000; _delay_ms(20); }
 	PORTD = 0b00100000; _delay_ms(20);
 
 	PORTD = 0b00001000;
@@ -88,18 +90,46 @@ void circulo(uint8_t tamaño){
 	PORTD = 0;
 }
 
+void flor(void){
+	circulo(28);
+	_delay_ms(500);
+
+	PORTD = 0b00100000; _delay_ms(1500);
+	circulo(14);
+
+	PORTD = 0b00010000; _delay_ms(3000);
+	PORTD = 0b10000000; _delay_ms(500);
+	circulo(14);
+
+	PORTD = 0b01000000; _delay_ms(3000);
+	circulo(14);
+
+	PORTD = 0b00100000; _delay_ms(3000);
+	PORTD = 0b01000000; _delay_ms(1000);
+	circulo(14);
+
+	PORTD = 0b10000000; _delay_ms(2000);
+	circulo(14);
+
+	PORTD = 0b00001000;
+	_delay_ms(500);
+	PORTD = 0;
+}
 
 void rana(void){
-	
-}
+	circulo(20);
 
-void flor(void){
-	circulo(14);
-	PORTD
-	_delay_ms(2500);
-	circulo(7);
-}
+	PORTD = 0b00010000; _delay_ms(3000);
+	circulo(10);
 
+	PORTD = 0b10000000; _delay_ms(1000);
+	circulo(5);
+	PORTD = 0b01000000; _delay_ms(2000);
+	circulo(5);
+
+	PORTD = 0b00001000; _delay_ms(300);
+	PORTD = 0;
+}
 
 void iniciar(void){
 	PORTD = 0b10000000;
@@ -182,4 +212,5 @@ int main(void)
 
 	return 0;
 }
+
 

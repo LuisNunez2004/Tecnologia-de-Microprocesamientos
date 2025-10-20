@@ -58,9 +58,7 @@ void menu(void) {
       else if (recieved == '2') {
    ModoReproductor();
    break;
-      } else {
-   USART_SendString("Opcion Invalida, intente nuevamente.\r\n");
-      }
+      } 
    }
 }
 
@@ -122,7 +120,7 @@ void ModoReproductor(void) {
    USART_SendString("Modo Reproductor:\r\n");
    USART_SendString("0-Salir.\r\n");
    USART_SendString("1-Reproducir: JIJIJI - Solo - Patricio Rey y Sus Redonditos de Ricota.\r\n");
-   USART_SendString("2-Reproducir: Avril - Los Estomagos.\r\n");
+   USART_SendString("2-Reproducir: Cementerio Club - Solo - Pescado Rabioso.\r\n");
    USART_SendString("0-Salir.\r\n");
    while (1) {
       unsigned char recieved = USART_Recieve();
@@ -243,7 +241,92 @@ void Cancion1(void) {
 
 
 void Cancion2(void) {
-   
+   const int melodia[] = {1109, 1319, 1397, 1397, 2217, //5
+   1760, 1480, 1397, 1319, 2217, 1760, 1397, 1397, 1319, 1397,
+   1760, 1480};
+   //const int melodia[] = {1109, 1319, 698, 698, 1109, //5
+   //880, 740, 698, 659, 1109, 880, 698, 698, 659, 698,
+   //880};
+   const int duraciones[] = {352, 234, 1172, 234, 234,
+   234, 469, 59, 234, 234, 234, 528, 293, 234, 645,
+   469, 469};
+
+   for (int i=0; i<2; i++) {
+      Tone(melodia[i]);
+      Delay_ms_variable(duraciones[i]);
+      noTone();
+      Delay_ms_variable((int)(duraciones[i] * 0.05));
+   }
+   Delay_ms_variable(117);
+   Tone(melodia[2]);
+   Delay_ms_variable(duraciones[2]);
+   noTone();
+   Delay_ms_variable(234);
+   for (int i=0; i<2; i++) { 
+     for (int i=3; i<6; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+        noTone();
+        Delay_ms_variable((int)(duraciones[i] * 0.05));
+     }
+     for (int i=6; i<8; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+     }
+     noTone();
+     Delay_ms_variable(176);
+     for (int i=8; i<12; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+        noTone();
+        Delay_ms_variable((int)(duraciones[i] * 0.05));
+     }
+     noTone();
+     Delay_ms_variable(176);
+     for (int i=12; i<16; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+        noTone();
+        Delay_ms_variable((int)(duraciones[i] * 0.05));
+     }
+     
+     Delay_ms_variable(1172);
+     
+     for (int i=3; i<6; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+        noTone();
+        Delay_ms_variable((int)(duraciones[i] * 0.05));
+     }
+     for (int i=6; i<8; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+     }
+     noTone();
+     Delay_ms_variable(176);
+     for (int i=8; i<12; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+        noTone();
+        Delay_ms_variable((int)(duraciones[i] * 0.05));
+     }
+     noTone();
+     Delay_ms_variable(176);
+     for (int i=12; i<14; i++) {
+        Tone(melodia[i]);
+        Delay_ms_variable(duraciones[i]);
+        noTone();
+        Delay_ms_variable((int)(duraciones[i] * 0.05));
+     }
+     Tone(melodia[14]);
+     Delay_ms_variable(176);
+     noTone();
+     Delay_ms_variable((int)(176 * 0.05));
+     Tone(melodia[16]);
+     Delay_ms_variable(duraciones[16]);
+     noTone();
+     Delay_ms_variable(2813);
+  }
 }
 
 int main(void) {
